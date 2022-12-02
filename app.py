@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 
-from .model.etat import Etat
+from model.etat import Etat
 
 app = Flask(__name__)
 CORS(app)
@@ -32,12 +32,6 @@ def newStory():
             {"etat": Etat.FIN, "texte": "bad", "previewGauche": "à gauche","previewDroite": "à Droite", "gauche": None, "droite": None, "explicGauche": None, "explicDroite": None}
         ]
     })
-
-# @socketio.on('nextStory')
-# def nextStory(id, choice):
-#     print(id)
-#     print(choice)
-#     print("Suite de Story")
 
 
 if __name__ == "__main__":

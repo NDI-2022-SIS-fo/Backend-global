@@ -264,4 +264,6 @@ if __name__ == "__main__":
 
     ]
     with Session(main.Engine) as session:
-        
+        for carte in cartes:
+            session.add(carte)
+        session.commit()
